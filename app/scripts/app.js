@@ -15,9 +15,10 @@ angular
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch'
+    'ngTouch',
+    'ng-contentful'
   ])
-  .config(function ($routeProvider) {
+  .config(function ($routeProvider, contentfulClientProvider) {
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
@@ -26,4 +27,10 @@ angular
       .otherwise({
         redirectTo: '/'
       });
+
+
+    contentfulClientProvider.setSpaceId('4xlwm16911zp');
+    contentfulClientProvider.setAccessToken('6fe66430d43042a7c28777422e4ae6f8edf5f58bf05d46a072e92a83bf432dab');
+
+
   });

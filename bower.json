@@ -13,7 +13,10 @@
     "angular-route": "~1.2.0",
     "showdown": "~0.3.1",
     "jquery": "~2.1.1",
-    "moment": "~2.8.3"
+    "moment": "~2.8.3",
+    "contentful": "~0.1.2",
+    "ng-contentful": "~0.1.2",
+    "okvideo": "~2.3.3"
   },
   "devDependencies": {
     "angular-mocks": "~1.2.0",

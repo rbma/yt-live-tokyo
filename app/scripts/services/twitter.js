@@ -7,23 +7,28 @@
  * # twitter
  * Factory in the youtubeStreamApp.
  */
-angular.module('youtubeStreamApp')
-  .factory('twitter', ['$http', function ($http) {
+angular.module('youtubeStreamApp').factory('twitter', ['$http', function ($http) {
 
 
-    function init(){
-      return $http({
-        url: 'http://rbma-twit-core.s3.amazonaws.com/tweets.json'
-      });
+  
+
+  function init(){
+    return $http({
+      url: 'http://rbma-twit-core.s3.amazonaws.com/tweets.json'
+    });
+  }
+
+
+
+
+
+  return {
+    init: function () {
+      return init();
     }
+  };
 
 
-    // Public API here
-    return {
-      init: function () {
-        return init();
-      }
-    };
 
 
 }]);
