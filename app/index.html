@@ -1,18 +1,34 @@
 <!doctype html>
 <html class="no-js">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width">
-    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-    <!-- build:css(.) styles/vendor.css -->
-    <!-- bower:css -->
-    <!-- endbower -->
-    <!-- endbuild -->
-    <!-- build:css(.tmp) styles/main.css -->
-    <link rel="stylesheet" href="styles/main.css">
-    <!-- endbuild -->
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="robots" content="index,follow">
+      <link rel="icon" type="image/x-icon" href="/favicon.ico">
+      
+      <title>RBMA Tokyo 2014 | Live Stream</title>
+      <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+      <link rel="stylesheet" type="text/css" href="styles/main.css">
+      
+      <meta name="twitter:card" content="summary_large_image">
+      <meta name="twitter:site" content="@rbma_jp">
+      <meta name="twitter:title" content="RBMA Tokyo 2014 | Live Stream">
+      <meta name="twitter:description" content="RBMATOKYO ライブ配信 from the YouTube Space Tokyo">
+      <meta name="twitter:creator" content="@rbma_jp">
+      <meta name="twitter:image:src" content="https://images.contentful.com/4xlwm16911zp/4yjiTxHkM0csSqsYImGeCi/be17e07a97ea0cc636ffbbdd246c856e/daisuke-tanabe.jpg">
+      
+      <meta property="og:title" content="RBMA Tokyo 2014 | Live Stream">
+      <meta property="og:type" content="video">
+      <meta property="og:url" content="http://www.redbullmusicacademy.jp/features/live-stream">
+      <meta property="og:image" content="https://images.contentful.com/4xlwm16911zp/4yjiTxHkM0csSqsYImGeCi/be17e07a97ea0cc636ffbbdd246c856e/daisuke-tanabe.jpg">
+      <meta property="og:description" content="Red Bull Music Academy Tokyo 2014 ライブ配信 from the YouTube Space">
+      <meta property="og:site_name" content="Red Bull Music Academy">
+      <meta property="fb:admins" content="100006789941377">
+      
+      <link rel="author" href="https://plus.google.com/+RBMA/posts">
+      <link rel="publisher" href="https://plus.google.com/+RBMA">
+      <meta name="description" content="Red Bull Music Academy Tokyo 2014 ライブ配信 from the YouTube Space">
   </head>
   <body ng-app="youtubeStreamApp">
     <!--[if lt IE 7]>
@@ -57,6 +73,7 @@
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
         <script src="scripts/app.js"></script>
         <script src="scripts/controllers/main.js"></script>
+        <script src="scripts/services/twitter.js"></script>
         <!-- endbuild -->
 </body>
 </html>
