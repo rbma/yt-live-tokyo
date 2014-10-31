@@ -1,0 +1,146 @@
+header{
+	position: absolute;
+	top: 64px;
+	left: 0;
+	width: 150px;
+	z-index: 4;
+	height: auto;
+	background-color: black;
+	text-align: center;
+	overflow: hidden;
+	.header-img{
+		position: relative;
+		top: 10px;
+		margin: 10px auto;
+		left: 0;
+		width: 100px;
+		height: 112.5px;
+		background: url(../img/logo.png) no-repeat center center;
+		background-size: contain;
+	}
+
+	@media (max-width: 767px){
+		width: 75%;
+		max-width: 75%;
+		margin: 0;
+		top: 0;
+		left: 25%;
+		height: 67px;
+		border-bottom: 1px solid white;
+		.header-img{
+			margin: 0px 15px;
+			width: 50px;
+			height: 50px;
+			margin-left:20px;
+			background: url(../img/bulls-small.png) no-repeat center center;
+			background-size: 100%;
+			display: inline-block;
+			float: left;
+		}
+	}
+
+	.x{
+		font-size: 1em;
+		margin-top: 20px;
+		@media (max-width: 767px){
+			float: left;
+			margin: 0;
+			text-transform: lowercase;
+			margin-top: 25px;
+		}
+	}
+
+	a.youtube-icon{
+		font-size: 55px;
+		color: white;
+		text-decoration: none;
+		@media (max-width: 767px){
+			float: left;
+			font-size: 1.75em;
+			margin: 0;
+			margin-top: 20px;
+			margin-left: 19px;
+		}
+	}
+	
+
+	.creator-space{
+		display: block;
+		width: 90%;
+		margin: 5px 5% 70px 5%;
+		@media (max-width: 767px){
+			display: none;
+			border-right: 1px solid white;
+		}
+	}
+
+
+	.info-button{
+		width: 75px;
+		margin: auto;
+		right: 0;
+		box-sizing: border-box;
+		border: 2px solid white;
+		font-size: 1.5em;
+		cursor: pointer !important;
+		&:hover{
+			background-color: white;
+			color: black;
+		}
+		@media (max-width: 767px){
+			width: 10%;
+			float: right;
+			font-size: 1em;
+			margin-right: 50px;
+			// margin: 10px auto auto 40%;
+			margin-top: 20px;
+		}
+		@media (max-width: 568px){
+			width: 15%;
+		}
+
+	}
+	
+
+	// social
+	.button-group.logo-group{
+		box-sizing: border-box;
+		margin: 25px 0;
+		width: 100%;
+		margin-bottom: 30%;
+		@media (max-width: 767px){
+			display: none;
+		}
+			
+		.button{
+			-webkit-font-smoothing: antialiased;
+			background-color: white;
+			border-radius: 0;
+			color: black !important;
+			margin: 0;
+			margin-right: 5px;
+			width: 30px;
+			height: 30px;
+			padding: 0;
+			display: inline-block;
+			line-height: 30px;
+			@include smallboxy();
+			@include vendorize(transition, all .1s linear);
+			span{
+				color: black;
+			}
+			&:active, &:hover{
+				@include vendorize(transform, translate(5px,5px));
+				@include vendorize(box-shadow, none);
+			}
+			a{
+				text-decoration: none;
+				color: black;
+				line-height: 35px;
+				padding: 0;
+				vertical-align: middle;
+				font-size: 20px;
+			}
+		}
+	}
+}

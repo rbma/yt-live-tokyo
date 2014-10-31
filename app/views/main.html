@@ -1,0 +1,72 @@
+<div id="header" class="main-navbar">
+  <a href="http://www.redbullmusicacademy.jp/jp/home/" class="logo">
+    <div class="logo-text">&larr;&nbsp; Back</div>
+  </a>
+</div>
+
+
+<header>
+  
+  <div ng-click="reload()" class="header-img"></div>
+  
+  <h2 class="x">X</h2>
+  <a href="http://www.youtube.com/yt/space/tokyo.html" target="_blank" class="fa fa-youtube youtube-icon"></a>
+  
+  <span class="creator-space">Creator Space Tokyo</span>
+  <h1 info="info" class="info-button">INFO</h1>
+  
+
+  <div class="button-group logo-group">
+    <div class="button">
+      <a href="https://twitter.com/share?url=http://www.redbullmusicacademy.jp/features/live-stream&amp;via=rbma_jp&amp;text=RBMA Tokyo ライブ配信 from the YouTube Space" target="blank"><span class="fa fa-twitter"></span>
+      </a>
+    </div>
+    
+    <div class="button">
+      <a href="https://www.facebook.com/sharer/sharer.php?u=http://www.redbullmusicacademy.jp" target="blank"><span class="fa fa-facebook"></span>
+      </a>
+    </div>
+  </div>
+</header>
+
+
+
+<div ng-if="video.ready">
+  <div video-block="video-block" video-id="{{data.fields.youtubeStreamId}}" class="video"></div>
+  <div ng-if="!video.playing" class="event-text">
+    <h1>{{data.fields.eventInfo}} / {{data.fields.todaysPerformer}}</h1>
+  </div>
+</div>
+
+
+
+<!--ABOUT DROPDOWN-->
+<div class="about">
+  <div exit="exit" class="exit offscreen">x</div>
+  
+  <h2 ng-bind-html="trust(lineup)"></h2>
+  
+  <h2 class="event-info">{{data.fields.eventInfo}}</h2>
+  
+  <p ng-bind-html="trust(data.fields.bodyText)"></p>
+  
+  <div class="small-logo"><a href="http://www.redbullmusicacademy.jp" target="_blank"><img src="img/bulls-small.svg"/></a></div>
+  
+  <div class="button-group">
+    
+    <div class="button"><a href="https://twitter.com/share?url=http://www.redbullmusicacademy.jp/features/live-stream&amp;via=rbma_jp&amp;text=RBMA Tokyo ライブ配信 from the YouTube Space" target="blank"><span class="fa fa-twitter"></span></a></div>
+    
+    <div class="button"><a href="https://www.facebook.com/sharer/sharer.php?u=http://www.redbullmusicacademy.jp" target="blank"><span class="fa fa-facebook"></span></a></div>
+  
+  </div>
+</div>
+
+
+
+<!--TWITTER FEED-->
+<div ng-if="ready">
+  <div ng-if="video.ready">
+    <div exit-twitter="exit-twitter" class="tweet-exit">x</div>
+  </div>
+  <div class="tweet-container"><a href="https://twitter.com/search?q=%23rbmatokyo&amp;src=typd" target="_blank"><span class="tweets">{{tweets}}</span></a></div>
+</div>

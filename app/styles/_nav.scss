@@ -1,0 +1,50 @@
+$logo: 'http://www.redbullmusicacademy.jp/img/fe/sprite_logo.png';
+
+
+
+.main-navbar { 
+  display: block; 
+  position: fixed; 
+  width: 150px; 
+  height: 67px; 
+  z-index: 100; 
+  box-sizing: border-box;
+  border-bottom: 1px solid white;
+  z-index: 5;
+  top: 0;
+  background-color: black; 
+  text-align: center;
+  font-family: "ClanPro-NarrUltra", Tahoma, Arial, sans-serif;
+  @media (max-width: 767px){
+    background-color: black;
+    width: 25%;
+    border-right: 1px solid white;
+  }
+
+}
+
+.main-navbar .logo { 
+  display: block; 
+  float: left; 
+  height: 64px;
+}
+
+
+.main-navbar .logo .logo-text { 
+  display: inline-block; 
+  vertical-align: top; 
+  height: 64px; 
+  line-height: 64px;
+  padding: 0 50px;
+  font-size: 12px; 
+  margin-top: 2.5px;
+  color: white; 
+  text-decoration: none; 
+  text-transform: uppercase;
+  @media (max-width: 767px){
+    padding: 0 0;
+    text-align: center;
+    margin-left: 20px;
+    
+  }
+}
