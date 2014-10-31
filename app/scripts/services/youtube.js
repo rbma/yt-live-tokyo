@@ -14,7 +14,7 @@ angular.module('youtubeStreamApp')
     var player;
 
 
-    var init = function(){
+    var init = function(video){
       //set up all the shit
       var tag = document.createElement('script');
       tag.src = "https://www.youtube.com/iframe_api";
@@ -25,9 +25,13 @@ angular.module('youtubeStreamApp')
       //listen
       window.onYouTubeIframeAPIReady = function() {
         player = new YT.Player('player', {
-          height: '390',
-          width: '640',
-          videoId: 'M7lc1UVf-VE',
+          videoId: video,
+          playerVars:{
+            hd: 1,
+            controls: 0,
+            modestbranding: 0,
+            showinfo: 0
+          },
           events: {
             'onReady': onPlayerReady
           }
@@ -39,8 +43,6 @@ angular.module('youtubeStreamApp')
       };
 
 
-
-
     }; //end init
 
    
@@ -49,8 +51,8 @@ angular.module('youtubeStreamApp')
 
 
     return {
-      init: function () {
-        return init();
+      init: function(video) {
+        return init(video);
       }
     };
 
@@ -58,3 +60,5 @@ angular.module('youtubeStreamApp')
 
 
   });
+
+

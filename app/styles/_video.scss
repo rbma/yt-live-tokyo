@@ -1,3 +1,33 @@
-#okayplayer{
-	z-index: 1 !important;
+.video-wrapper{
+	position: fixed;
+	display: block;
+	opacity: 1;
+	left: 0;
+	top: 0;
+	padding-top: 0;
+	height: 100%;
+	width: 100%;
+
+}
+
+
+.video{
+	opacity: 1;
+	position: relative;
+	padding-bottom: 46.25%;
+	padding-top: 30px;
+	height: 0;
+	overflow: hidden;
+	margin-bottom: 50px;
+	margin-top: 0;
+	width: 100%;
+	margin-left: 0;
+	iframe, object, embed{
+		position: absolute !important;
+		top: 0 !important;
+		left: -10% !important;
+		width: 120% !important;
+		height: 120% !important;
+
+	}
 }

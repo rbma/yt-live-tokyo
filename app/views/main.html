@@ -32,13 +32,17 @@
 
 
 
-<div ng-if="video.ready">
-  <div id="player"></div>
+
+  <div class="video-wrapper">
+    <div class="video">
+      <div id="player"></div>
+    </div>
+  </div>
   <!-- <div video-block="video-block" video-id="{{data.fields.youtubeStreamId}}" class="video"></div> -->
   <div ng-if="!video.playing" class="event-text">
     <h1>{{data.fields.eventInfo}} / {{data.fields.todaysPerformer}}</h1>
   </div>
-</div>
+
 
 
 
@@ -56,9 +60,9 @@
   
   <div class="button-group">
     
-    <div class="button"><a href="https://twitter.com/share?url=http://www.redbullmusicacademy.jp/features/live-stream&amp;via=rbma_jp&amp;text=RBMA Tokyo ライブ配信 from the YouTube Space" target="blank"><span class="fa fa-twitter"></span></a></div>
+    <div class="button"><a href="https://twitter.com/share?url=http://www.redbullmusicacademy.jp/features/live-stream&amp;via=rbma_jp&amp;text={{data.fields.twitterShareText}}" target="blank"><span class="fa fa-twitter"></span></a></div>
     
-    <div class="button"><a href="https://www.facebook.com/sharer/sharer.php?u=http://www.redbullmusicacademy.jp" target="blank"><span class="fa fa-facebook"></span></a></div>
+    <div class="button"><a href="https://www.facebook.com/sharer/sharer.php?u=http://www.redbullmusicacademy.jp/features/live-stream/" target="blank"><span class="fa fa-facebook"></span></a></div>
   
   </div>
 </div>

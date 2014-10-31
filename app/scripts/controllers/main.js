@@ -37,8 +37,7 @@ angular.module('youtubeStreamApp')
 
   		var releaseDate = '';
 
-  		
-      youtube.init();
+  	
 
 
   		//open twitter
@@ -120,6 +119,11 @@ angular.module('youtubeStreamApp')
   			//render html from markdown
   			$scope.lineup = converter.makeHtml($scope.data.fields.performers);
   			$scope.body = converter.makeHtml($scope.data.fields.bodyText);
+
+       
+        var currentVideo = $scope.data.fields.youtubeStreamId
+
+        youtube.init(currentVideo)
 
 
 
