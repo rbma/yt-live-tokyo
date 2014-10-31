@@ -8,11 +8,12 @@
 <header>
   
   <div ng-click="reload()" class="header-img"></div>
+
   
-  <h2 class="x">X</h2>
+ <!--  <h2 class="x">X</h2>
   <a href="http://www.youtube.com/yt/space/tokyo.html" target="_blank" class="fa fa-youtube youtube-icon"></a>
   
-  <span class="creator-space">Creator Space Tokyo</span>
+  <span class="creator-space">Creator Space Tokyo</span> -->
   <h1 info="info" class="info-button">INFO</h1>
   
 
@@ -32,7 +33,8 @@
 
 
 <div ng-if="video.ready">
-  <div video-block="video-block" video-id="{{data.fields.youtubeStreamId}}" class="video"></div>
+  <div id="player"></div>
+  <!-- <div video-block="video-block" video-id="{{data.fields.youtubeStreamId}}" class="video"></div> -->
   <div ng-if="!video.playing" class="event-text">
     <h1>{{data.fields.eventInfo}} / {{data.fields.todaysPerformer}}</h1>
   </div>

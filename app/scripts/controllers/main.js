@@ -13,8 +13,9 @@ angular.module('youtubeStreamApp')
   	'$rootScope',
   	'$sce',
   	'twitter',
+    'youtube',
   	'contentfulClient',
-  	function ($scope, $rootScope, $sce, twitter, contentfulClient) {
+  	function ($scope, $rootScope, $sce, twitter, youtube, contentfulClient) {
 
   		var converter = new Showdown.converter();
 
@@ -35,6 +36,10 @@ angular.module('youtubeStreamApp')
   		var keepChecking = '';
 
   		var releaseDate = '';
+
+  		
+      youtube.init();
+
 
   		//open twitter
   		twitter.init().success(function(data){
@@ -61,6 +66,11 @@ angular.module('youtubeStreamApp')
   		$scope.trust = function(text){
   			return $sce.trustAsHtml(text);
   		}
+
+  		
+
+
+
 
   		//checks to see if video is now updating
   		var checkTime = function(releaseDate){
@@ -89,6 +99,10 @@ angular.module('youtubeStreamApp')
   			}
 
   		};
+
+  		
+
+
 
   		//get data
   		contentfulClient.entries({'sys.id': pageId, 'include': 10}).then(function(data){
@@ -119,19 +133,4 @@ angular.module('youtubeStreamApp')
 
 
  }]);
-
-
-
-
-// streamControllers.controller('IndexCtrl', ['$scope','$rootScope','$sce', 'socketService','contentfulClient', ($scope, $rootScope, $sce, socketService, contentfulClient) ->
-
-		
-
-
-// 		$scope.lineup = converter.makeHtml($scope.data.fields.performers)
-// 		$scope.body = converter.makeHtml($scope.data.fields.bodyText)
-
-// ])
-	
-
 
