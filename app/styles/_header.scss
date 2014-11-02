@@ -1,9 +1,9 @@
 header{
-	position: absolute;
+	position: fixed;
 	top: 64px;
 	left: 0;
 	width: 150px;
-	z-index: 4;
+	z-index: 99999;
 	height: auto;
 	background-color: black;
 	text-align: center;

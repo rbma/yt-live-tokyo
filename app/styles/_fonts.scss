@@ -1,26 +1,54 @@
+/*
+ * Legal Disclaimer
+ *
+ * These Fonts are licensed only for use on these domains and their subdomains:
+ * redbullmusicacademy.com
+ *
+ * It is illegal to download or use them on other websites.
+ *
+ * While the @font-face statements below may be modified by the client, this
+ * disclaimer may not be removed.
+ *
+ * Lineto.com, 2014
+ */
+
+
+
 @font-face {
-    font-family: 'Karla';
-    src: url('../fonts/Karla-Bold.eot'); /* IE9 Compat Modes */
-    src: url('../fonts/Karla-Bold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-         url('../fonts/Karla-Bold.woff') format('woff'), /* Modern Browsers */
-         url('../fonts/Karla-Bold.ttf') format('truetype'), /* Safari, Android, iOS */
-         url('../fonts/Karla-Bold.svg#Karla-Bold') format('svg'); /* Legacy iOS */
-    font-style: normal;
+    font-family: circular;
+    src:url("../fonts/lineto-circular-bold.eot");
+    src:url("../fonts/lineto-circular-bold.eot?#iefix") format("embedded-opentype"),
+        url("../fonts/lineto-circular-bold.woff") format("woff"),
+        url("../fonts/lineto-circular-bold.ttf") format("truetype"),
+        url("../fonts/lineto-circular-bold.svg#lineto-circular-bold") format("svg");
     font-weight: bold;
-    text-rendering: optimizeLegibility;
+    font-style: normal;
 }
+
+
 
 @font-face {
-    font-family: 'Karla';
-    src: url('../fonts/Karla-Regular.eot'); /* IE9 Compat Modes */
-    src: url('../fonts/Karla-Regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-         url('../fonts/Karla-Regular.woff') format('woff'), /* Modern Browsers */
-         url('../fonts/Karla-Regular.ttf') format('truetype'), /* Safari, Android, iOS */
-         url('../fonts/Karla-Regular.svg#Karla-Regular') format('svg'); /* Legacy iOS */
-    font-style: normal;
+    font-family: circular;
+    src:url("../fonts/lineto-circular-book.eot");
+    src:url("../fonts/lineto-circular-book.eot?#iefix") format("embedded-opentype"),
+        url("../fonts/lineto-circular-book.woff") format("woff"),
+        url("../fonts/lineto-circular-book.ttf") format("truetype"),
+        url("../fonts/lineto-circular-book.svg#lineto-circular-book") format("svg");
     font-weight: normal;
-    text-rendering: optimizeLegibility;
+    font-style: normal;
 }
 
 
 
+
+
+@font-face {
+    font-family: circular;
+    src:url("../fonts/lineto-circular-bookitalic.eot");
+    src:url("../fonts/lineto-circular-bookitalic.eot?#iefix") format("embedded-opentype"),
+        url("../fonts/lineto-circular-bookitalic.woff") format("woff"),
+        url("../fonts/lineto-circular-bookitalic.ttf") format("truetype"),
+        url("../fonts/lineto-circular-bookitalic.svg#lineto-circular-bookitalic") format("svg");
+    font-weight: normal;
+    font-style: italic;
+}

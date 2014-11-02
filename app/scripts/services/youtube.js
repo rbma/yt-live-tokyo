@@ -9,7 +9,7 @@
  * Factory in the youtubeStreamApp.
  */
 angular.module('youtubeStreamApp')
-  .factory('youtube', function () {
+  .factory('youtube', ['$rootScope', function ($rootScope) {
 
     //global player ref
     var player;
@@ -41,6 +41,7 @@ angular.module('youtubeStreamApp')
 
       var onPlayerReady = function(event){
         event.target.playVideo();
+        $rootScope.$broadcast('videoOn', player);
       };
 
 
@@ -60,6 +61,6 @@ angular.module('youtubeStreamApp')
 
 
 
-  });
+  }]);
 
 

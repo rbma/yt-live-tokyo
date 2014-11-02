@@ -32,14 +32,28 @@
 
 
 
+  <!--VIDEO API-->
   <div class="video-wrapper">
     <div class="video">
       <div id="player"></div>
     </div>
   </div>
-  <!-- <div video-block="video-block" video-id="{{data.fields.youtubeStreamId}}" class="video"></div> -->
-  <div ng-if="!video.playing" class="event-text">
-    <h1>{{data.fields.eventInfo}} / {{data.fields.todaysPerformer}}</h1>
+
+  <!--VIDEO EXIT-->
+  <div ng-if="video.playing" class="video-exit">
+    <span ng-click="closeVideo()", class="fa fa-times"></span>
+  </div>
+
+  <!--VIDEO BACKGROUND-->
+  <div ng-if="!video.playing" class="prev-events">
+    <h1>Previous Shows</h1>
+    <div class="show-container">
+      <div class="show" ng-repeat="event in data.fields.previousStreams"
+        ng-click="swapVideo(event.fields.youtubeId)" 
+        style="background: url(../images/play.svg), url({{event.fields.artistImage.fields.file.url}}?w=500)">
+        <p>{{event.fields.title}}</p>
+      </div>
+    </div>
   </div>
 
 
