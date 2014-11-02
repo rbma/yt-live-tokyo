@@ -16,7 +16,6 @@
     "moment": "~2.8.3",
     "contentful": "~0.1.2",
     "ng-contentful": "~0.1.2",
-    "okvideo": "~2.3.3",
     "jquery.transit": "~0.9.12"
   },
   "devDependencies": {

@@ -11,8 +11,6 @@ describe('Service: youtube', function () {
     youtube = _youtube_;
   }));
 
-  it('should do something', function () {
-    expect(!!youtube).toBe(true);
-  });
+
 
 });

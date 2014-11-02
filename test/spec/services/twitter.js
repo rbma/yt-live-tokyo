@@ -11,8 +11,6 @@ describe('Service: twitter', function () {
     twitter = _twitter_;
   }));
 
-  it('should do something', function () {
-    expect(!!twitter).toBe(true);
-  });
+
 
 });

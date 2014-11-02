@@ -1,3 +1,7 @@
+/*global $:false */
+/*global Showdown:false */
+/*global moment:false */
+
 'use strict';
 
 /**
@@ -64,7 +68,7 @@ angular.module('youtubeStreamApp')
 
   		$scope.trust = function(text){
   			return $sce.trustAsHtml(text);
-  		}
+  		};
 
   		
 
@@ -121,9 +125,9 @@ angular.module('youtubeStreamApp')
   			$scope.body = converter.makeHtml($scope.data.fields.bodyText);
 
        
-        var currentVideo = $scope.data.fields.youtubeStreamId
+        var currentVideo = $scope.data.fields.youtubeStreamId;
 
-        youtube.init(currentVideo)
+        youtube.init(currentVideo);
 
 
 

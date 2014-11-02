@@ -1,3 +1,4 @@
+/*global $:false */
 'use strict';
 
 /**
@@ -9,7 +10,7 @@
 angular.module('youtubeStreamApp')
   .directive('info', function () {
 
-  	var link = function($scope, element, attrs){
+  	var link = function($scope, element){
 
   		element.click(function(){
   			$('.about').transition({
