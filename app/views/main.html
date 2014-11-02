@@ -34,51 +34,44 @@
 
   <!--VIDEO API-->
   <div class="video-wrapper">
-    <div class="video">
+    <div size-video class="video">
       <div id="player"></div>
     </div>
   </div>
 
+  <!--MOBILE VIDEO-->
+  <div class="video">
+    <iframe width="560" height="315" src="{{mobileStream}}" frameborder="0" allowfullscreen></iframe>
+  </div>
+
   <!--VIDEO EXIT-->
-  <div ng-if="video.playing" class="video-exit">
+  <div ng-if="video.playing && !video.ready" class="video-exit">
     <span ng-click="closeVideo()", class="fa fa-times"></span>
   </div>
 
+
   <!--VIDEO BACKGROUND-->
-  <div ng-if="!video.playing" class="prev-events">
-    <h1>Previous Shows</h1>
-    <div class="show-container">
-      <div class="show" ng-repeat="event in data.fields.previousStreams"
-        ng-click="swapVideo(event.fields.youtubeId)" 
-        style="background: url(../images/play.svg), url({{event.fields.artistImage.fields.file.url}}?w=500)">
-        <p>{{event.fields.title}}</p>
+  <div ng-if="!video.playing" class="prev-events" du-scroll-container>
+    <div class="prev-events-wrapper">
+      <h1 class="intro" ng-cloak>Next Live Stream:</h1>
+      <h1 class="first" ng-cloak>{{data.fields.performers}}</h1>
+      <h1 ng-cloak>{{nextBroadcast}} JST</h1>
+      <a href="#prev" du-smooth-scroll offset="30">
+        <h1 class="fa fa-angle-down"></h1>
+      </a>
+      <h1 id="prev">Previous Shows</h1>
+      <div class="show-container">
+        <div class="show" ng-repeat="event in data.fields.previousStreams"
+          ng-click="swapVideo(event.fields.youtubeId)" 
+          style="background: url(../images/play.svg), url({{event.fields.artistImage.fields.file.url}}?w=600)">
+          <p>{{event.fields.title}}</p>
+        </div>
       </div>
     </div>
   </div>
 
 
 
-
-<!--ABOUT DROPDOWN-->
-<div class="about">
-  <div exit="exit" class="exit offscreen">x</div>
-  
-  <h2 ng-bind-html="trust(lineup)"></h2>
-  
-  <h2 class="event-info">{{data.fields.eventInfo}}</h2>
-  
-  <p ng-bind-html="trust(data.fields.bodyText)"></p>
-  
-  <div class="small-logo"><a href="http://www.redbullmusicacademy.jp" target="_blank"><img src="images/bulls-small.svg"/></a></div>
-  
-  <div class="button-group">
-    
-    <div class="button"><a href="https://twitter.com/share?url=http://www.redbullmusicacademy.jp/features/live-stream&amp;via=rbma_jp&amp;text={{data.fields.twitterShareText}}" target="blank"><span class="fa fa-twitter"></span></a></div>
-    
-    <div class="button"><a href="https://www.facebook.com/sharer/sharer.php?u=http://www.redbullmusicacademy.jp/features/live-stream/" target="blank"><span class="fa fa-facebook"></span></a></div>
-  
-  </div>
-</div>
 
 
 

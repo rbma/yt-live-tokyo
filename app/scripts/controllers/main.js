@@ -1,4 +1,4 @@
-/*global $:false */
+
 /*global Showdown:false */
 /*global moment:false */
 
@@ -23,6 +23,9 @@ angular.module('youtubeStreamApp')
 
 			var converter = new Showdown.converter();
 
+			//kick off timer
+			$rootScope.$broadcast('timer-start');
+
 			//page id
 			var pageId = '6dfDQTqL16Q48mMo0kYwYs';
 
@@ -35,12 +38,19 @@ angular.module('youtubeStreamApp')
 			$scope.video.playing = false;
 			$scope.video.ready = false;
 			$scope.player = {};
+			$scope.nextBroadcast = '';
+			$scope.mobileStream = '';
+			
+			//stock video and/or livestream
+			var defaultVideo = 'zVXnoIoWu88';
+
+			//live stream vid
+			var streamVideo = '';
 
 
 			//interval variable
 			var keepChecking = '';
-
-			var releaseDate = '';
+			$scope.releaseDate = '';
 
 		
 
@@ -79,13 +89,17 @@ angular.module('youtubeStreamApp')
 				return $sce.trustAsHtml(text);
 			};
 
-
 			$scope.swapVideo = function(id){
-				console.log(id);
 				$scope.player.loadVideoById(id);
 				//need to edit videos so they start immediately
 				$scope.player.seekTo(2400);
 				$scope.video.playing = true;
+			};
+
+			$scope.closeVideo = function(){
+				$scope.player.loadVideoById(defaultVideo);
+				$scope.video.playing = false;
+
 			};
 
 
@@ -95,17 +109,17 @@ angular.module('youtubeStreamApp')
 			//checks to see if video is now updating
 			var checkTime = function(releaseDate){
 
-				//episode not out yet
+				//episode not out yet, playing default stream
 				if (moment() < releaseDate){
-
-					$scope.video.ready = true;
+					$scope.video.ready = false;
+					youtube.init(defaultVideo);
 				}
 
-				//episode out
+				//episode out, play real stream
 				if (moment() >= releaseDate){
 					$scope.video.ready = true;
 					$scope.video.playing = true;
-
+					youtube.init(streamVideo);
 					clearInterval(keepChecking);
 				}
 			};
@@ -120,22 +134,25 @@ angular.module('youtubeStreamApp')
 
 				console.log($scope.data);
 
+				//get reference to streaming vid
+				streamVideo = $scope.data.fields.youtubeStreamId;
+
+				$scope.mobileStream = '//www.youtube.com/embed/' + streamVideo;
+
 
 				//convert date
-				releaseDate = new Date($scope.data.fields.broadcastTime);
+				$scope.releaseDate = new Date($scope.data.fields.broadcastTime);
+				$scope.nextBroadcast = moment($scope.releaseDate).format('llll');
 
 				//episode is not released yet
-				checkTime(releaseDate);
-				keepChecking = setInterval(checkTime(releaseDate), 10000);
+				checkTime($scope.releaseDate);
+				keepChecking = setInterval(checkTime($scope.releaseDate), 10000);
 
 				//render html from markdown
 				$scope.lineup = converter.makeHtml($scope.data.fields.performers);
 				$scope.body = converter.makeHtml($scope.data.fields.bodyText);
 
-			 
-				var currentVideo = $scope.data.fields.youtubeStreamId;
 
-				youtube.init(currentVideo);
 
 
 			}); //end data

@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="no-js">
+<html class="no-js" lang="en" ng-app="youtubeStreamApp">
     <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -30,7 +30,7 @@
       <link rel="publisher" href="https://plus.google.com/+RBMA">
       <meta name="description" content="Red Bull Music Academy Tokyo 2014 ライブ配信 from the YouTube Space">
   </head>
-  <body ng-app="youtubeStreamApp">
+  <body>
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -70,6 +70,7 @@
     <script src="bower_components/contentful/dist/contentful.min.js"></script>
     <script src="bower_components/ng-contentful/ng-contentful.js"></script>
     <script src="bower_components/jquery.transit/jquery.transit.js"></script>
+    <script src="bower_components/angular-scroll/angular-scroll.min.js"></script>
     <!-- endbower -->
     <script src="bower_components/showdown/compressed/showdown.js"></script>
     <!-- endbuild -->
@@ -78,9 +79,8 @@
         <script src="scripts/app.js"></script>
         <script src="scripts/controllers/main.js"></script>
         <script src="scripts/services/twitter.js"></script>
-        <script src="scripts/directives/exit.js"></script>
-        <script src="scripts/directives/info.js"></script>
         <script src="scripts/services/youtube.js"></script>
+        <script src="scripts/directives/size-video.js"></script>
         <!-- endbuild -->
 </body>
 </html>

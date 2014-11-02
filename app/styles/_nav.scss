@@ -10,12 +10,12 @@ $logo: 'http://www.redbullmusicacademy.jp/img/fe/sprite_logo.png';
   z-index: 100; 
   box-sizing: border-box;
   border-bottom: 1px solid white;
-  z-index: 5;
+  z-index: 99999;
   top: 0;
   background-color: black; 
   text-align: center;
   font-family: "ClanPro-NarrUltra", Tahoma, Arial, sans-serif;
-  @media (max-width: 767px){
+  @media (max-width: 1024px){
     background-color: black;
     width: 25%;
     border-right: 1px solid white;

@@ -1,6 +1,6 @@
 'use strict';
 
-describe('Directive: exitTwitter', function () {
+describe('Directive: sizeVideo', function () {
 
   // load the directive's module
   beforeEach(module('youtubeStreamApp'));
@@ -10,6 +10,5 @@ describe('Directive: exitTwitter', function () {
   beforeEach(inject(function ($rootScope) {
     scope = $rootScope.$new();
   }));
-
 
 });

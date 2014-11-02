@@ -16,26 +16,6 @@ body{
 	-webkit-overflow-scrolling: touch;
 }
 
-.event-text{
-	text-align: center;
-	width: 100%;
-	width: 70%;
-	left: 15%;
-	position: absolute;
-	background-color: transparent;
-	bottom: 57px;
-	font-size: 1.2em;
-	text-transform: uppercase;
-	z-index: 2;
-	color: white;
-	h1{
-		font-size: 1.7em;
-		@media (max-width: 767px){
-			font-size: 1em;
-		}
-	}
-}
-
 
 
 *, *:before, *:after{

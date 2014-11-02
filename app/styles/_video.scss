@@ -22,6 +22,9 @@
 	margin-top: 0;
 	width: 100%;
 	margin-left: 0;
+	@media (max-width: 767px){
+		top: 75px;
+	}
 	iframe, object, embed{
 		position: absolute !important;
 		top: 0 !important;
@@ -43,17 +46,66 @@
 	background: url(../images/overlay.png) repeat top left;
 	background-size: cover;
 	overflow-y: scroll;
+	.prev-events-wrapper{
+		height: 100%;
+		width: 100%;
+		margin-top: 15%;
+		position: relative;
+		@media (max-width: 767px){
+			margin-top: 25%;
+		}
+	}
 	h1{
 		text-align: center;
-		font-size: 3em;
+		font-size: 2em;
+		width: 80%;
+		margin-left: 10%;
 		text-transform: uppercase;
-		background-color: white;
-		color: black;
-		width: 400px;
+		color: white;
 		margin-left: auto;
 		margin-right: auto;
 		line-height: 1;
 		letter-spacing: 1px;
+		margin-top: 10px;
+		@media (max-width: 767px){
+			font-size: 1em;
+		}
+		&.fa{
+			text-align: center;
+			font-size: 3em;
+			margin-left: 30%;
+			width: 40%;
+		}
+		&.intro{
+			margin-top: 10%;
+			@media (max-width: 767px){
+				font-size: 1em;
+				margin-top: 20%;
+			}
+		}
+		&#prev{
+			margin-top: 15%;
+		}
+		&.first{
+			font-size: 4em;
+			@media (max-width: 767px){
+				font-size: 3em;
+			}
+			&:after{
+				content: '';
+				width: 80%;
+				margin-left: 10%;
+				text-align: center;
+				height: 2px;
+				background: white;
+				position: relative;
+				display: block;
+				margin-top: 30px;
+				@media (max-width: 767px){
+					margin-top: 10px;
+				}
+			}
+		}
 	}
 	.show-container{
 		position: relative;
@@ -67,15 +119,27 @@
 		margin: 96px auto auto auto;
 		text-align: left;
 		vertical-align: top;
-		width: 400px;
-		height: 400px;
+		width: 500px;
+		height: 300px;
 		overflow: hidden;
 		background-color: transparent;
 		background-repeat: no-repeat !important;
-		background-size: 20%, cover !important;
+		background-size: 15%, cover !important;
 		background-position: center center !important;
 		@include vendorize(box-shadow, 5px 5px 5px black);
 		@include vendorize(transition, all .1s linear);
+		@media (max-width: 1024px){
+			width: 400px;
+			height: 240px;
+
+		}
+		@media (max-width: 767px){
+			width: 250px;
+			height: 150px;
+		}
+		&:first-child{
+			margin-top: 10px;
+		}
 		&:hover, &:active{
 			@include vendorize(transform, translateX(3px) translateY(3px));
 			@include vendorize(box-shadow, 2px 2px 2px black);
@@ -95,6 +159,11 @@
 	width: 50px;
 	height: 50px;
 	z-index: 9999999999;
+	text-align: center;
+	@media (max-width: 767px){
+		top: 67px;
+		right: 5px;
+	}
 	span{
 		line-height: 50px;
 		color: white;
@@ -102,6 +171,9 @@
 		@include vendorize(transition, all .1s linear);
 		&:hover{
 			@include vendorize(transform, scale(1.5));
+		}
+		@media (max-width: 767px){
+			font-size: 1.5em;
 		}
 	}
 }
