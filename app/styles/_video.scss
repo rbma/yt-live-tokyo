@@ -25,26 +25,6 @@
 }
 
 
-// .video{
-// 	opacity: 1;
-// 	position: relative;
-// 	padding-bottom: 56.25%;
-// 	padding-top: 30px;
-// 	height: 0;
-// 	overflow: hidden;
-// 	margin-bottom: 50px;
-// 	margin-top: 0;
-// 	width: 100%;
-// 	margin-left: 0;
-// 	iframe, object, embed{
-// 		position: absolute !important;
-// 		top: 0 !important;
-// 		width: 100% !important;
-// 		height: 100% !important;
-// 		// left: -10% !important;
-
-// 	}
-// }
 
 
 .prev-events{
@@ -62,6 +42,10 @@
 		width: 100%;
 		margin-top: 15%;
 		position: relative;
+		@media (max-width: 1024px){
+			width: 70%;
+			margin-left: 15%;
+		}
 		@media (max-width: 767px){
 			margin-top: 25%;
 		}

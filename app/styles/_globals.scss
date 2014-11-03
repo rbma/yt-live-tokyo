@@ -57,7 +57,7 @@ a{
 
 .desktop{
 	display: block;
-	@media (max-width: 768px){
+	@media (max-width: 767px){
 		display: none;
 	}
 	@media (max-device-width: 1024px){
