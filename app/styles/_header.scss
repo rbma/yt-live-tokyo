@@ -1,6 +1,71 @@
+
+$logo: 'http://www.redbullmusicacademy.jp/img/fe/sprite_logo.png';
+
+
+.main-navbar { 
+  display: block; 
+  position: fixed; 
+  width: 150px; 
+  height: 67px; 
+  z-index: 100; 
+  box-sizing: border-box;
+  border-bottom: 1px solid white;
+  z-index: 99999;
+  top: 0;
+  background-color: black; 
+  text-align: center;
+  font-family: clan, Tahoma, Arial, sans-serif;
+  @media (max-device-width: 1024px){
+    @media (orientation: portrait){
+      background-color: black;
+      width: 22.5%;
+      border-right: 1px solid white;
+    }
+    @media (orientation: landscape){
+      background-color: black;
+      width: 16.5%;
+      border-right: 1px solid white;
+    }
+  }
+  @media (max-width: 767px){
+    @media (orientation: portrait){
+      width: 30%;
+      border-right: 1px solid white;
+    }
+  }
+}
+
+.main-navbar .logo { 
+  display: block; 
+  float: left; 
+  height: 64px;
+}
+
+
+.main-navbar .logo .logo-text { 
+  display: inline-block; 
+  vertical-align: top; 
+  height: 64px; 
+  line-height: 64px;
+  padding: 0 50px;
+  font-size: 12px; 
+  margin-top: 2.5px;
+  color: white; 
+  text-decoration: none; 
+  text-transform: uppercase;
+  @media (max-width: 767px){
+    padding: 0 0;
+    text-align: center;
+    margin-left: 20px;
+    
+  }
+}
+
+
+
 header{
 	position: fixed;
-	top: 64px;
+	top: 67px;
 	left: 0;
 	width: 150px;
 	z-index: 99999;
@@ -19,7 +84,7 @@ header{
 		background-size: contain;
 	}
 
-	@media (max-width: 1024px){
+	@media (max-device-width: 1024px){
 		@media (orientation: portrait){
 			width: 77.5%;
 			max-width: 77.5%;
@@ -61,6 +126,23 @@ header{
 	}
 
 	@media (max-width: 767px){
+		width: 80%;
+		max-width: 80%;
+		margin: 0;
+		top: 0;
+		left: 20%;
+		height: 67px;
+		border-bottom: 1px solid white;
+		.header-img{
+			margin: 0px 15px;
+			width: 50px;
+			height: 50px;
+			margin-left:20px;
+			background: url(../images/bulls-small.png) no-repeat center center;
+			background-size: 100%;
+			display: inline-block;
+			float: left;
+		}
 		@media (orientation: portrait){
 			width: 75%;
 			max-width: 75%;
@@ -85,7 +167,13 @@ header{
 	.x{
 		font-size: 1em;
 		margin-top: 20px;
-		@media (max-width: 1024px){
+		@media (max-device-width: 1024px){
+			float: left;
+			margin: 0;
+			text-transform: lowercase;
+			margin-top: 25px;
+		}
+		@media (max-width: 767px){
 			float: left;
 			margin: 0;
 			text-transform: lowercase;
@@ -97,7 +185,14 @@ header{
 		font-size: 55px;
 		color: white;
 		text-decoration: none;
-		@media (max-width: 1024px){
+		@media (max-device-width: 1024px){
+			float: left;
+			font-size: 1.75em;
+			margin: 0;
+			margin-top: 20px;
+			margin-left: 19px;
+		}
+		@media (max-width: 767px){
 			float: left;
 			font-size: 1.75em;
 			margin: 0;
@@ -110,40 +205,20 @@ header{
 	.creator-space{
 		display: block;
 		width: 90%;
+		font-size: 0.6em;
+		-webkit-font-smoothing: antialiased;
 		margin: 5px 5% 70px 5%;
-		@media (max-width: 1024px){
+		@media (max-device-width: 1024px){
+			display: none;
+			border-right: 1px solid white;
+		}
+		@media (max-width: 767px){
 			display: none;
 			border-right: 1px solid white;
 		}
 	}
 
 
-	.info-button{
-		width: 75px;
-		margin: auto;
-		margin-top: 48px;
-		right: 0;
-		box-sizing: border-box;
-		border: 2px solid white;
-		font-size: 1.5em;
-		cursor: pointer !important;
-		&:hover{
-			background-color: white;
-			color: black;
-		}
-		@media (max-width: 1024px){
-			width: 10%;
-			float: right;
-			font-size: 1em;
-			margin-right: 50px;
-			// margin: 10px auto auto 40%;
-			margin-top: 20px;
-		}
-		@media (max-width: 568px){
-			width: 15%;
-		}
-
-	}
 	
 
 	// social
@@ -152,7 +227,10 @@ header{
 		margin: 25px 0;
 		width: 100%;
 		margin-bottom: 30%;
-		@media (max-width: 1024px){
+		@media (max-device-width: 1024px){
+			display: none;
+		}
+		@media (max-width: 767px){
 			display: none;
 		}
 			

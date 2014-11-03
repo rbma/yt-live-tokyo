@@ -70,12 +70,6 @@ angular.module('youtubeStreamApp')
 
 
 
-			
-
-			$scope.reload = function(){
-				window.location.reload();
-			};
-
 			$scope.trust = function(text){
 				return $sce.trustAsHtml(text);
 			};
