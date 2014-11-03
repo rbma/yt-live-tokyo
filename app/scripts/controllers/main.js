@@ -154,7 +154,6 @@ angular.module('youtubeStreamApp')
 				//episode is not released yet
 				checkTime();
 				
-
 				//render html from markdown
 				$scope.lineup = converter.makeHtml($scope.data.fields.performers);
 				$scope.body = converter.makeHtml($scope.data.fields.bodyText);
