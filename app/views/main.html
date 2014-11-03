@@ -1,3 +1,5 @@
+<!--HEADER STUFF-->
+
 <div id="header" class="main-navbar">
   <a href="http://www.redbullmusicacademy.jp/jp/home/" class="logo">
     <div class="logo-text">&larr;&nbsp; Back</div>
@@ -6,16 +8,15 @@
 
 
 <header>
-  
   <div ng-click="reload()" class="header-img"></div>
-
-  
   <h2 class="x">X</h2>
-  <a href="http://www.youtube.com/yt/space/tokyo.html" target="_blank" class="fa fa-youtube youtube-icon"></a>
+  
+  <a href="http://www.youtube.com/yt/space/tokyo.html"
+    target="_blank" 
+    class="fa fa-youtube youtube-icon">
+  </a>
   
   <span class="creator-space">Creator Space Tokyo</span>
-  
-
   <div class="button-group logo-group">
     <div class="button">
       <a href="https://twitter.com/share?url=http://www.redbullmusicacademy.jp/features/live-stream&amp;via=rbma_jp&amp;text=RBMA Tokyo ライブ配信 from the YouTube Space" target="blank"><span class="fa fa-twitter"></span>
@@ -32,17 +33,18 @@
 
 
 
+
+
+
+<!--DESKTOP WRAPPER-->
+<section class="desktop">
   <!--VIDEO API-->
-  <div class="video-wrapper">
+  <section class="video-wrapper">
     <div size-video class="video">
       <div id="player"></div>
     </div>
-  </div>
+  </section>
 
-  <!--MOBILE VIDEO-->
-  <div class="video">
-    <iframe width="560" height="315" src="{{mobileStream}}" frameborder="0" allowfullscreen></iframe>
-  </div>
 
   <!--VIDEO EXIT-->
   <div ng-if="video.playing && !video.ready" class="video-exit">
@@ -51,7 +53,7 @@
 
 
   <!--VIDEO BACKGROUND-->
-  <div ng-if="!video.playing" class="prev-events" du-scroll-container>
+  <section ng-if="!video.playing" class="prev-events" du-scroll-container>
     <div class="prev-events-wrapper">
       <h1 class="intro" ng-cloak>Next Live Stream:</h1>
       <h1 class="first" ng-cloak>{{data.fields.performers}}</h1>
@@ -66,12 +68,22 @@
           style="background: url(../images/play.svg), url({{event.fields.artistImage.fields.file.url}}?w=600)">
           <p>{{event.fields.title}}</p>
         </div>
-      </div>
-    </div>
-  </div>
+      </div><!--END SHOW CONTAINER-->
+    </div><!--END EVENTS WRAPPER-->
+  </section>
+</section> <!--END DESKTOP-->
 
 
 
+
+
+
+
+
+<!--MOBILE-->
+<div class="mobile", ng-if="ready">
+  <div lazy class="lazyYT" videoid="{{data.fields.youtubeStreamId}}" data-parameters="controls=0&modestrbranding=1" data-ratio="16:9"></div>
+</div>
 
 
 

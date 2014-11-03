@@ -22,17 +22,16 @@ angular.module('youtubeStreamApp')
 		function ($scope, $rootScope, $sce, twitter, youtube, contentfulClient) {
 
 			var converter = new Showdown.converter();
+			var pageId = '6dfDQTqL16Q48mMo0kYwYs'; //page id
+			var defaultVideo = 'zVXnoIoWu88'; //stock video and/or livestream
+			var streamVideo = ''; //live stream vid
+			var keepChecking = ''; //interval variable
 
 			//kick off timer
 			$rootScope.$broadcast('timer-start');
 
-			//page id
-			var pageId = '6dfDQTqL16Q48mMo0kYwYs';
-
-			//empty container
+			//flags and globals
 			$scope.tweets = '';
-
-			//flags
 			$scope.ready = false;
 			$scope.video = {};
 			$scope.video.playing = false;
@@ -40,23 +39,14 @@ angular.module('youtubeStreamApp')
 			$scope.player = {};
 			$scope.nextBroadcast = '';
 			$scope.mobileStream = '';
-			
-			//stock video and/or livestream
-			var defaultVideo = 'zVXnoIoWu88';
-
-			//live stream vid
-			var streamVideo = '';
-
-
-			//interval variable
-			var keepChecking = '';
 			$scope.releaseDate = '';
 
-		
+	
+			
 
-
-			//open twitter
+			//TWITTER
 			twitter.init().success(function(data){
+				
 				var tweets = data;
 				var length = tweets.length;
 
@@ -103,9 +93,6 @@ angular.module('youtubeStreamApp')
 			};
 
 
-
-
-
 			//checks to see if video is now updating
 			var checkTime = function(releaseDate){
 
@@ -123,8 +110,6 @@ angular.module('youtubeStreamApp')
 					clearInterval(keepChecking);
 				}
 			};
-
-
 
 
 			//get data
@@ -151,9 +136,6 @@ angular.module('youtubeStreamApp')
 				//render html from markdown
 				$scope.lineup = converter.makeHtml($scope.data.fields.performers);
 				$scope.body = converter.makeHtml($scope.data.fields.bodyText);
-
-
-
 
 			}); //end data
 		}
