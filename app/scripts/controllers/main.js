@@ -25,7 +25,7 @@ angular.module('youtubeStreamApp')
 			var pageId = '6dfDQTqL16Q48mMo0kYwYs'; //page id
 			var defaultVideo = 'zVXnoIoWu88'; //stock video and/or livestream
 			var streamVideo = ''; //live stream vid
-			var keepChecking = ''; //interval variable
+			var timer;
 
 			//kick off timer
 			$rootScope.$broadcast('timer-start');
@@ -40,6 +40,7 @@ angular.module('youtubeStreamApp')
 			$scope.nextBroadcast = '';
 			$scope.mobileStream = '';
 			$scope.releaseDate = '';
+			$scope.dataReady = false;
 
 	
 			
@@ -83,32 +84,53 @@ angular.module('youtubeStreamApp')
 				$scope.player.loadVideoById(id);
 				//need to edit videos so they start immediately
 				$scope.player.seekTo(2400);
+				//make sure we have sound
+				$scope.player.unMute();
 				$scope.video.playing = true;
 			};
 
 			$scope.closeVideo = function(){
+				$scope.player.mute();
 				$scope.player.loadVideoById(defaultVideo);
 				$scope.video.playing = false;
 
 			};
 
-
-			//checks to see if video is now updating
-			var checkTime = function(releaseDate){
+			var keepChecking = function(){
+				console.log('called');
 
 				//episode not out yet, playing default stream
-				if (moment() < releaseDate){
+				if (moment() < $scope.releaseDate){
 					$scope.video.ready = false;
-					youtube.init(defaultVideo);
 				}
 
 				//episode out, play real stream
-				if (moment() >= releaseDate){
+				if (moment() >= $scope.releaseDate){
+					$scope.video.ready = true;
+					$scope.video.playing = true;
+					clearInterval(timer);
+					$scope.player.loadVideoById(streamVideo);
+				}
+			};
+
+
+			//checks to see if video is now updating
+			var checkTime = function(){
+
+				//episode not out yet, playing default stream
+				if (moment() < $scope.releaseDate){
+					$scope.video.ready = false;
+					youtube.init(defaultVideo);
+					timer = setInterval(keepChecking, 10000);
+				}
+
+				//episode out, play real stream
+				if (moment() >= $scope.releaseDate){
 					$scope.video.ready = true;
 					$scope.video.playing = true;
 					youtube.init(streamVideo);
-					clearInterval(keepChecking);
 				}
+				
 			};
 
 
@@ -124,14 +146,19 @@ angular.module('youtubeStreamApp')
 
 				$scope.mobileStream = '//www.youtube.com/embed/' + streamVideo;
 
+				//send message that data is ready
+				$rootScope.$broadcast('data');
+
+				$scope.dataReady = true;
+
 
 				//convert date
 				$scope.releaseDate = new Date($scope.data.fields.broadcastTime);
 				$scope.nextBroadcast = moment($scope.releaseDate).format('llll');
 
 				//episode is not released yet
-				checkTime($scope.releaseDate);
-				keepChecking = setInterval(checkTime($scope.releaseDate), 10000);
+				checkTime();
+				
 
 				//render html from markdown
 				$scope.lineup = converter.makeHtml($scope.data.fields.performers);

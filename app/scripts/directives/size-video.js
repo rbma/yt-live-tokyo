@@ -45,9 +45,6 @@ angular.module('youtubeStreamApp').directive('sizeVideo', function () {
 			width = $(window).width();
 			height = $(window).height();
 			winRatio = width / height;
-
-			console.log(winRatio);
-			console.log(ratio);
 			moveElement(element);
 
 		});

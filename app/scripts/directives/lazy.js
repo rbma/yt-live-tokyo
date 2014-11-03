@@ -6,14 +6,23 @@
  * @description
  * # lazy
  */
-angular.module('youtubeStreamApp').directive('lazy', function () {
-	var link = function($scope, element, attrs){
+angular.module('youtubeStreamApp').directive('lazy', ['$rootScope', '$timeout', function ($rootScope, $timeout) {
+	
+	var setup = function(element, attrs){
 		var id = attrs.videoid;
 		element.data('youtube-id', id);
 		element.lazyYT();
 	};
 
+
+	var link = function($scope, element, attrs){
+		$timeout(function(){
+			setup(element, attrs);
+		},1000);
+		
+	};
+
 	return {
 		link: link
 	};
-});
+}]);

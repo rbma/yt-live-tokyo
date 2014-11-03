@@ -40,6 +40,7 @@ angular.module('youtubeStreamApp')
       };
 
       var onPlayerReady = function(event){
+        event.target.mute();
         event.target.playVideo();
         $rootScope.$broadcast('videoOn', player);
       };

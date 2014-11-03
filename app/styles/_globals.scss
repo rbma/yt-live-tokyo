@@ -3,8 +3,9 @@ html{
 	height: 100%;
 	margin: 0;
 	font-size: 16px;
-	font-family: circular, 'Helvetica Neue', helvetica, sans-serif;
+	font-family: clan, 'Helvetica Neue', helvetica, sans-serif;
 	-webkit-font-smoothing: antialiased;
+	font-weight: bold;
 }
 
 body{
@@ -16,6 +17,9 @@ body{
 	-webkit-overflow-scrolling: touch;
 }
 
+a{
+	color: white;
+}
 
 
 *, *:before, *:after{
@@ -29,8 +33,9 @@ body{
 }
 
 
+
 .lazyYT{
-	margin-left: 5%;
+	margin-left: 10%;
 }
 .lazyYT-title{
 	display: none !important;

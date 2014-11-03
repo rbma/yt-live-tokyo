@@ -38,6 +38,8 @@
 
 <!--DESKTOP WRAPPER-->
 <section class="desktop">
+  
+
   <!--VIDEO API-->
   <section class="video-wrapper">
     <div size-video class="video">
@@ -81,9 +83,34 @@
 
 
 <!--MOBILE-->
-<div class="mobile", ng-if="ready">
-  <div lazy class="lazyYT" videoid="{{data.fields.youtubeStreamId}}" data-parameters="controls=0&modestrbranding=1" data-ratio="16:9"></div>
-</div>
+<div class="mobile">
+  <!--PREV EVENTS-->
+  <section ng-if="!video.ready" class="mobile-prev-events">
+    <div class="mobile-prev-events-wrapper">
+      <h1 class="intro" ng-cloak>Next Live Stream:</h1>
+      <h1 class="first" ng-cloak>{{data.fields.performers}}</h1>
+      <h1 class="date" ng-cloak>{{nextBroadcast}} JST</h1>
+      <h1 class="fa fa-angle-down angle-mobile"></h1>
+      <h1 class="mobile-prev">Previous Shows:</h1>
+      <div class="mobile-show-container">
+        <div class="mobile-show" ng-repeat="event in data.fields.previousStreams">
+          <div lazy class="lazyYT mobile-video" videoid="{{event.fields.youtubeId}}" data-parameters="controls=0&modestrbranding=1" data-ratio="16:9"></div>
+          <p>{{event.fields.title}}</p>
+        </div>
+      </div><!--END SHOW CONTAINER-->
+    </div><!--END EVENTS WRAPPER-->
+  </section><!--END-PREV-->
+
+
+  <!--CURRENT STREAM ON-->
+  <section ng-if="video.ready" class="mobile-prev-events">
+    <div lazy class="lazyYT mobile-video" videoid="{{data.fields.youtubeStreamId}}" data-parameters="controls=0&modestrbranding=1" data-ratio="16:9"></div>
+    <h1>{{data.fields.performers}}</h1>
+    <p>Live from YouTube Creator Studio Tokyo</p>
+  </section>
+  <!--END CURRENT-->
+
+</div><!--END MOBILE-->
 
 
 
