@@ -23,14 +23,25 @@
 		
 	}
 	.mobile-prev-events-wrapper{
-		margin-top: 40%;
+		@media (orientation: landscape){
+			margin-top: 30%;
+		}
+		@media (orientation: portrait){
+			margin-top: 45%;
+		}
+		
 		padding-bottom: 75px;
 	}
 
 	.mobile-prev{
-		margin-top: 30%;
 		font-size: 1em;
 		margin-bottom: 0;
+		@media (orientation: portrait){
+			margin-top: 52%;
+		}
+		@media (orientation: landscape){
+			margin-top: 20%;
+		}
 	}
 	.intro, .date{
 		font-size: 1em;
