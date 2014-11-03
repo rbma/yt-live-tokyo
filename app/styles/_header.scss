@@ -60,6 +60,28 @@ header{
 		}
 	}
 
+	@media (max-width: 767px){
+		@media (orientation: portrait){
+			width: 75%;
+			max-width: 75%;
+			margin: 0;
+			top: 0;
+			left: 30%;
+			height: 67px;
+			border-bottom: 1px solid white;
+			.header-img{
+				margin: 0px 15px;
+				width: 50px;
+				height: 50px;
+				margin-left:20px;
+				background: url(../images/bulls-small.png) no-repeat center center;
+				background-size: 100%;
+				display: inline-block;
+				float: left;
+			}
+		}
+	}
+
 	.x{
 		font-size: 1em;
 		margin-top: 20px;

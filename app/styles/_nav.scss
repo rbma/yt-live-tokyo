@@ -10,6 +10,7 @@ $logo: 'http://www.redbullmusicacademy.jp/img/fe/sprite_logo.png';
   z-index: 100; 
   box-sizing: border-box;
   border-bottom: 1px solid white;
+  border-right: 1px solid white;
   z-index: 99999;
   top: 0;
   background-color: black; 
@@ -19,12 +20,15 @@ $logo: 'http://www.redbullmusicacademy.jp/img/fe/sprite_logo.png';
     @media (orientation: portrait){
       background-color: black;
       width: 22.5%;
-      border-right: 1px solid white;
     }
     @media (orientation: landscape){
       background-color: black;
       width: 16.5%;
-      border-right: 1px solid white;
+    }
+  }
+  @media (max-width: 767px){
+    @media (orientation: portrait){
+      width: 30%;
     }
   }
 }
