@@ -1,6 +1,7 @@
 .mobile{
 	display: none;
 	text-align: center;
+	-webkit-overflow-scrolling: touch;
 	@media (max-width: 767px){
 		display: block;
 	}

@@ -28,6 +28,10 @@ $logo: 'http://www.redbullmusicacademy.jp/img/fe/sprite_logo.png';
     }
   }
   @media (max-width: 767px){
+  	@media (orientation: landscape){
+  		width: 20%;
+  		border-right: 1px solid white;
+  	}
     @media (orientation: portrait){
       width: 30%;
       border-right: 1px solid white;
@@ -144,8 +148,8 @@ header{
 			float: left;
 		}
 		@media (orientation: portrait){
-			width: 75%;
-			max-width: 75%;
+			width: 70%;
+			max-width: 70%;
 			margin: 0;
 			top: 0;
 			left: 30%;
@@ -161,6 +165,10 @@ header{
 				display: inline-block;
 				float: left;
 			}
+		}
+		@media (orientation: landscape){
+			width: 80%;
+			left: 20%;
 		}
 	}
 
