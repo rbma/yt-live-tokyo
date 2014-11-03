@@ -9,7 +9,7 @@
  * # sizeVideo
  */
 
-angular.module('youtubeStreamApp').directive('sizeVideo', function () {
+angular.module('youtubeStreamApp').directive('sizeVideo', ['$rootScope', function ($rootScope) {
 	
 	
 	var ratio = 16/9;
@@ -21,26 +21,40 @@ angular.module('youtubeStreamApp').directive('sizeVideo', function () {
 	
 	var moveElement = function(element){
 
-		if (winRatio < ratio){
-			
-			var diff = ratio - winRatio;
+		width = $(window).width();
+		height = $(window).height();
+		var pWidth, pHeight;
 
-			element.css({
-				marginTop: diff * 25 + '%'
+		var frame = element.find('iframe');
+
+		if (width / ratio < height){
+			pWidth = Math.ceil(height * ratio);
+			frame.width(pWidth).height(height).css({
+				left: (width - pWidth) / 2,
+				top: 0
 			});
 		}
-		if (winRatio >= ratio){
-			element.css({
-				marginTop: 0
+
+		else{
+			pHeight = Math.ceil(width / ratio);
+			frame.width(width).height(pHeight).css({
+				left: 0,
+				top: (height - pHeight) / 2
 			});
 		}
+
 	};
 
 
 
 	var link = function($scope, element){
 
-		moveElement(element);
+		//wait until YT is ready
+		$rootScope.$on('videoOn', function(){
+			moveElement(element);
+		});
+
+		
 
 		$(window).resize(function(){
 			
@@ -57,4 +71,4 @@ angular.module('youtubeStreamApp').directive('sizeVideo', function () {
 	return {
 		link: link
 	};
-});
+}]);

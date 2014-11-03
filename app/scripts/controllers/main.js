@@ -96,9 +96,10 @@ angular.module('youtubeStreamApp')
 
 			};
 
-			var keepChecking = function(){
-				console.log('called');
 
+
+
+			var keepChecking = function(){
 				//episode not out yet, playing default stream
 				if (moment() < $scope.releaseDate){
 					$scope.video.ready = false;
