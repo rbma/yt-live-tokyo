@@ -20,22 +20,43 @@ header{
 	}
 
 	@media (max-width: 1024px){
-		width: 75%;
-		max-width: 75%;
-		margin: 0;
-		top: 0;
-		left: 25%;
-		height: 67px;
-		border-bottom: 1px solid white;
-		.header-img{
-			margin: 0px 15px;
-			width: 50px;
-			height: 50px;
-			margin-left:20px;
-			background: url(../images/bulls-small.png) no-repeat center center;
-			background-size: 100%;
-			display: inline-block;
-			float: left;
+		@media (orientation: portrait){
+			width: 77.5%;
+			max-width: 77.5%;
+			margin: 0;
+			top: 0;
+			left: 22.5%;
+			height: 67px;
+			border-bottom: 1px solid white;
+			.header-img{
+				margin: 0px 15px;
+				width: 50px;
+				height: 50px;
+				margin-left:20px;
+				background: url(../images/bulls-small.png) no-repeat center center;
+				background-size: 100%;
+				display: inline-block;
+				float: left;
+			}
+		}
+		@media (orientation: landscape){
+			width: 83.5%;
+			max-width: 83.5%;
+			margin: 0;
+			top: 0;
+			left: 16.5%;
+			height: 67px;
+			border-bottom: 1px solid white;
+			.header-img{
+				margin: 0px 15px;
+				width: 50px;
+				height: 50px;
+				margin-left:20px;
+				background: url(../images/bulls-small.png) no-repeat center center;
+				background-size: 100%;
+				display: inline-block;
+				float: left;
+			}
 		}
 	}
 

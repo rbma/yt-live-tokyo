@@ -24,10 +24,10 @@
 	margin-left: 0;
 	iframe, object, embed{
 		position: absolute !important;
-		top: 0 !important;
-		left: -10% !important;
+		top: -10% !important;
 		width: 120% !important;
 		height: 120% !important;
+		left: -10% !important;
 
 	}
 }
@@ -173,43 +173,4 @@
 			font-size: 1.5em;
 		}
 	}
-}
-
-.mobile{
-	display: none;
-	text-align: center;
-	@media (max-width: 1024px){
-		display: block;
-	}
-	.mobile-video{
-		margin-top: 175px;
-		&:first-child{
-			margin-top: 10px;
-		}
-	}
-	.mobile-prev-events-wrapper{
-		margin-top: 40%;
-		padding-bottom: 75px;
-	}
-
-	.mobile-prev{
-		margin-top: 30%;
-		font-size: 1em;
-		margin-bottom: 0;
-	}
-	.intro, .date{
-		font-size: 1em;
-		margin: 0;
-		line-height: 1;
-	}
-	.first{
-		line-height: 1.5;
-		margin: 0;
-	}
-	.angle-mobile{
-		margin-top: 10%;
-		font-size: 2em;
-	}
-
-
 }

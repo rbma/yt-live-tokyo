@@ -41,8 +41,8 @@
   
 
   <!--VIDEO API-->
-  <section class="video-wrapper">
-    <div size-video class="video">
+  <section  class="video-wrapper">
+    <div size-video class="video" id="videowrap">
       <div id="player"></div>
     </div>
   </section>
@@ -57,9 +57,9 @@
   <!--VIDEO BACKGROUND-->
   <section ng-if="!video.playing" class="prev-events" du-scroll-container>
     <div class="prev-events-wrapper">
-      <h1 class="intro" ng-cloak>Next Live Stream:</h1>
-      <h1 class="first" ng-cloak>{{data.fields.performers}}</h1>
-      <h1 ng-cloak>{{nextBroadcast}} JST</h1>
+      <h1 class="intro">Next Live Stream:</h1>
+      <h1 class="first">{{data.fields.performers}}</h1>
+      <h1>{{nextBroadcast}} JST</h1>
       <a href="#prev" du-smooth-scroll offset="30">
         <h1 class="fa fa-angle-down"></h1>
       </a>
@@ -87,11 +87,13 @@
   <!--PREV EVENTS-->
   <section ng-if="!video.ready" class="mobile-prev-events">
     <div class="mobile-prev-events-wrapper">
-      <h1 class="intro" ng-cloak>Next Live Stream:</h1>
-      <h1 class="first" ng-cloak>{{data.fields.performers}}</h1>
-      <h1 class="date" ng-cloak>{{nextBroadcast}} JST</h1>
-      <h1 class="fa fa-angle-down angle-mobile"></h1>
-      <h1 class="mobile-prev">Previous Shows:</h1>
+      <h1 class="intro">Next Live Stream:</h1>
+      <h1 class="mobile-first">{{data.fields.performers}}</h1>
+      <h1 class="date">{{nextBroadcast}} JST</h1>
+      <a href="#mobile-prev" du-smooth-scroll offset="75">
+        <h1 class="fa fa-angle-down angle-mobile"></h1>
+      </a>
+      <h1 class="mobile-prev" id="mobile-prev">Previous Shows:</h1>
       <div class="mobile-show-container">
         <div class="mobile-show" ng-repeat="event in data.fields.previousStreams">
           <div lazy class="lazyYT mobile-video" videoid="{{event.fields.youtubeId}}" data-parameters="controls=0&modestrbranding=1" data-ratio="16:9"></div>
@@ -102,15 +104,39 @@
   </section><!--END-PREV-->
 
 
+
+
+
   <!--CURRENT STREAM ON-->
   <section ng-if="video.ready" class="mobile-prev-events">
-    <div lazy class="lazyYT mobile-video" videoid="{{data.fields.youtubeStreamId}}" data-parameters="controls=0&modestrbranding=1" data-ratio="16:9"></div>
+    <div lazy class="lazyYT mobile-video-live" videoid="{{data.fields.youtubeStreamId}}" data-parameters="controls=0&modestrbranding=1" data-ratio="16:9"></div>
     <h1>{{data.fields.performers}}</h1>
     <p>Live from YouTube Creator Studio Tokyo</p>
   </section>
   <!--END CURRENT-->
 
+
+
+
+
+  <!--MOBILE SHARE-->
+  <div class="button-group logo-group">
+    <div class="button">
+      <a href="https://twitter.com/share?url=http://www.redbullmusicacademy.jp/features/live-stream&amp;via=rbma_jp&amp;text=RBMA Tokyo ライブ配信 from the YouTube Space" target="blank">
+        <span class="fa fa-twitter"></span>
+      </a>
+    </div>
+    
+    <div class="button">
+      <a href="https://www.facebook.com/sharer/sharer.php?u=http://www.redbullmusicacademy.jp" target="blank">
+        <span class="fa fa-facebook"></span>
+      </a>
+    </div>
+  </div><!--END BUTTONS-->
 </div><!--END MOBILE-->
+
+
+
 
 
 

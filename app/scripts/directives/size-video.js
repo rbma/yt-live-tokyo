@@ -11,10 +11,12 @@
 
 angular.module('youtubeStreamApp').directive('sizeVideo', function () {
 	
-	var ratio = 16 / 9;
+	
+	var ratio = 16/9;
 	var width = $(window).width();
 	var height = $(window).height();
 	var winRatio = width / height;
+
 	
 	
 	var moveElement = function(element){
