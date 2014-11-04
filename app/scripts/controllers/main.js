@@ -76,8 +76,6 @@ angular.module('youtubeStreamApp')
 
 			$scope.swapVideo = function(id){
 				$scope.player.loadVideoById(id);
-				//need to edit videos so they start immediately
-				$scope.player.seekTo(2400);
 				//make sure we have sound
 				$scope.player.unMute();
 				$scope.video.playing = true;
