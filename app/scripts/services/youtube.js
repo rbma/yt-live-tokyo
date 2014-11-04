@@ -29,7 +29,7 @@ angular.module('youtubeStreamApp')
           videoId: video,
           playerVars:{
             hd: 1,
-            controls: 0,
+            controls: 1,
             modestbranding: 0,
             showinfo: 0
           },
