@@ -61,9 +61,8 @@
   <!--VIDEO BACKGROUND-->
   <section ng-if="!video.playing" class="prev-events" du-scroll-container>
     <div class="prev-events-wrapper">
-      <h1 class="intro">Next Live Stream:</h1>
-      <h1 class="first">{{data.fields.performers}}</h1>
-      <h1>{{data.fields.eventInfo}}</h1>
+      <h1 class="intro">Watch Live Performances</h1>
+      <h1 class="second">From RBMA Tokyo</h1>
       <a href="#prev" du-smooth-scroll offset="30">
         <h1 class="fa fa-angle-down"></h1>
       </a>
@@ -91,9 +90,8 @@
   <!--PREV EVENTS-->
   <section ng-if="!video.ready" class="mobile-prev-events">
     <div class="mobile-prev-events-wrapper">
-      <h1 class="intro">Next Live Stream:</h1>
-      <h1 class="mobile-first">{{data.fields.performers}}</h1>
-      <h1 class="date">{{nextBroadcast}} JST</h1>
+      <h1>Watch Live Performances</h1>
+      <h1>From RBMA Tokyo</h1>
       <a href="#mobile-prev" du-smooth-scroll offset="75">
         <h1 class="fa fa-angle-down angle-mobile"></h1>
       </a>
